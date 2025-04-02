@@ -4,7 +4,7 @@ React bindings for @qyu/atom-state-core
 
 ## Connect Store Context
 
-```typescriptreact
+```tsx
 const store = atomstore_new()
 
 const root = <AtomStoreContext.Provider value={store}>
@@ -18,7 +18,7 @@ const root = <AtomStoreContext.Provider value={store}>
 
 Returns Atom Store from closest context, throws if used outside of context
 
-```typescript
+```tsx
 const App = () => {
     const store = useAtomStore()
 }
@@ -28,7 +28,7 @@ const App = () => {
 
 Returns dispatch function to run atom actions
 
-```typescript
+```tsx
 const App = () => {
     const dispatch = useAtomDispatch()
 }
@@ -38,7 +38,7 @@ const App = () => {
 
 Get atomvalue from register or return value of selector
 
-```typescriptreact
+```tsx
 const atomvalue = atomvalue_new(() => 10)
 
 const App = () => {
@@ -54,7 +54,7 @@ const App = () => {
 
 Same use useSignalOutput but used on atomvalue or atomselector
 
-```typescriptreact
+```tsx
 const atomstate = atomstate_new(() => 10)
 
 const App = () => {
@@ -74,7 +74,7 @@ const App = () => {
 
 Gets state from atom value in react's useState format
 
-```typescriptreact
+```tsx
 const atomstate = atomstate_new(() => 10)
 
 const App = () => {
@@ -90,7 +90,7 @@ const App = () => {
 
 The same as useSignalEffect on @qyu/signal-core, but gets signal from provided selector or value
 
-```typescriptreact
+```tsx
 const atomstate = atomstate_new(() => 10)
 
 const App = () => {
@@ -112,7 +112,7 @@ const App = () => {
 
 Get child of atomfamily
 
-```typescriptreact
+```tsx
 const atomfamily = atomfamily_new({
     key: (a: number, b: number) => `${a} ${b}`,
     get: (a: number, b: number) => atomvalue_new(() => ({ a, b }))
@@ -131,7 +131,7 @@ const App = () => {
 
 Request loader
 
-```typescriptreact
+```tsx
 const atomloader = atomloader_new_pure({
     throttler: throttler_new_immediate(),
 
@@ -159,7 +159,7 @@ const App = () => {
 
 Request loader inside of OSignal
 
-```typescriptreact
+```tsx
 const atomloader1 = atomloader_new_pure({
     throttler: throttler_new_immediate(),
 
