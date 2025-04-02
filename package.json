@@ -1,0 +1,40 @@
+{
+    "name": "@qyu/atom-state-react",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Atomic Storage bindings for react",
+    "keywords": ["state", "global", "react", "hooks", "storage", "atomic"],
+    "license": "MIT",
+    "files": [
+        "./build/**/*"
+    ],
+    "scripts": {
+        "build": "run-s build:clear build:rollup",
+        "build:clear": "rimraf ./build",
+        "build:rollup": "rollup -c npm/rollup/rollup.config.js"
+    },
+    "exports": {
+        ".": {
+            "types": "./build/declaration/index.d.ts",
+            "import": "./build/bundle/entry/index.js"
+        }
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.6",
+        "@types/react": "^18.0.0",
+        "npm-run-all": "^4.1.5",
+        "rimraf": "^6.0.1",
+        "rollup": "^4.20.0",
+        "typescript": "^5.8.2",
+        "typescript-transform-paths": "^3.5.5"
+    },
+    "dependencies": {
+        "tslib": "^2.6.3",
+        "@qyu/atom-state-core": "^1.0.0",
+        "@qyu/signal-core": "^1.0.0",
+        "@qyu/signal-react": "^1.0.0"
+    },
+    "peerDependencies": {
+        "react": ">=18.0.0"
+    }
+}
