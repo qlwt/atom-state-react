@@ -1,7 +1,8 @@
 {
     "name": "@qyu/atom-state-react",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "main": "./build/bundle/entry/index.js",
     "homepage": "https://github.com/qlwt/atom-state-react#readme",
     "description": "Atomic Storage bindings for react",
     "keywords": ["state", "global", "react", "hooks", "storage", "atomic"],
