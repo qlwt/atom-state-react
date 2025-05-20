@@ -70,6 +70,26 @@ const App = () => {
 }
 ```
 
+### useAtomConnect
+
+Same as useSignalConnect but used on atomvalue or atomselector
+
+```tsx
+const atomstate = atomstate_new(() => 10)
+
+const App = () => {
+    const connection = useAtomConnect(atomstate)
+
+    return <div>
+        {connection.value /* will be null at first render, then changed to number */}
+
+        <button onClick={() => { store.reg(atomstate).input(store.reg(atomstate).output() + 10) }}>
+            Increase value
+        </button>
+    </div>
+}
+```
+
 ### useAtomState
 
 Gets state from atom value in react's useState format
