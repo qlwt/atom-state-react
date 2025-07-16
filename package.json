@@ -1,7 +1,7 @@
 {
     "name": "@qyu/atom-state-react",
     "type": "module",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "main": "./build/bundle/entry/index.js",
     "homepage": "https://github.com/qlwt/atom-state-react#readme",
     "description": "Atomic Storage bindings for react",
@@ -38,7 +38,7 @@
         "tslib": "^2.6.3",
         "@qyu/atom-state-core": "^1.2.0",
         "@qyu/signal-core": "^1.1.1",
-        "@qyu/signal-react": "^1.2.0"
+        "@qyu/signal-react": "^1.2.1"
     },
     "peerDependencies": {
         "react": ">=18.0.0"
