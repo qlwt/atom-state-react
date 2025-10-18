@@ -36,7 +36,7 @@
     },
     "dependencies": {
         "tslib": "^2.6.3",
-        "@qyu/atom-state-core": "^2.0.0 || ^3.0.0",
+        "@qyu/atom-state-core": "^2.0.0 || ^3.0.0 || ^4.0.0",
         "@qyu/signal-core": "^1.2.0",
         "@qyu/signal-react": "^1.2.1"
     },
