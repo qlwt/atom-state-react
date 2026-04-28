@@ -1,18 +1,7 @@
-import { useAtomStore } from "#src/hook/atom/store.js"
-import type * as asc from "@qyu/atom-state-core"
-import * as react from "react"
+import { useStore } from "#src/hook/atom/store.js"
 
-export type AtomDispatch = {
-    (atomaction: asc.AtomAction): void
-}
+export const useDispatch = function() {
+    const store = useStore()
 
-export const useAtomDispatch = function(): AtomDispatch {
-    const store = useAtomStore()
-
-    return react.useCallback(
-        atomaction => {
-            atomaction(store)
-        },
-        [store]
-    )
+    return store.dispatch
 }

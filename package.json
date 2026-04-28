@@ -1,7 +1,7 @@
 {
     "name": "@qyu/atom-state-react",
     "type": "module",
-    "version": "2.0.3",
+    "version": "3.0.0",
     "main": "./build/bundle/entry/index.js",
     "homepage": "https://github.com/qlwt/atom-state-react#readme",
     "description": "Atomic Storage bindings for react",
@@ -15,6 +15,7 @@
         "url": "github:qlwt/atom-state-react"
     },
     "scripts": {
+        "test": "vitest --config ./npm/vite/vite.config.js",
         "build": "run-s build:clear build:rollup",
         "build:clear": "rimraf ./build",
         "build:rollup": "rollup -c npm/rollup/rollup.config.js"
@@ -32,13 +33,15 @@
         "rimraf": "^6.0.1",
         "rollup": "^4.20.0",
         "typescript": "^5.8.2",
-        "typescript-transform-paths": "^3.5.5"
+        "typescript-transform-paths": "^3.5.5",
+        "vite-tsconfig-paths": "^6.1.1",
+        "vitest": "^4.1.2"
     },
     "dependencies": {
-        "tslib": "^2.6.3",
-        "@qyu/atom-state-core": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0",
-        "@qyu/signal-core": "^1.2.0 || ^2.0.0",
-        "@qyu/signal-react": "^1.2.1 || ^2.0.0"
+        "@qyu/atom-state-core": "^6.0.0",
+        "@qyu/signal-core": "^2.1.0",
+        "@qyu/signal-react": "^2.1.0",
+        "tslib": "^2.6.3"
     },
     "peerDependencies": {
         "react": ">=18.0.0"

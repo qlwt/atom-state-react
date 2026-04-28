@@ -1,25 +1,31 @@
-import { useAtomValue } from "#src/hook/atom/value.js"
+import { useValue } from "#src/hook/atom/value.js"
 import type * as asc from "@qyu/atom-state-core"
 import { useSignalOutput } from "@qyu/signal-react"
 import * as react from "react"
 
-type Comaprator<T> = {
+type Comparator<T> = {
     (a: T, b: T): boolean
 }
 
-export type UseAtomState_Dispatch<I, O> = {
+export type UseStateControls_Config<T> = {
+    readonly comparator?: Comparator<T>
+}
+
+export type UseStateControls_Dispatch<I, O> = {
     (input: I): void
     (input: (output: O) => I): void
 }
 
-
-export type UseAtomState_Return<I, O> = [
+export type UseStateControls_Return<I, O> = [
     value: O,
-    dispatch: UseAtomState_Dispatch<I, O>
+    dispatch: UseStateControls_Dispatch<I, O>
 ]
 
-export const useAtomState = function <I, O>(atomstate: asc.AtomState<I, O>, comparator: Comaprator<O> = Object.is): UseAtomState_Return<I, O> {
-    const state = useAtomValue(atomstate)
+export const useStateControls = function <I, O>(
+    state_atom: asc.State_Atom<I, O>, config?: UseStateControls_Config<O>
+): UseStateControls_Return<I, O> {
+    const state = useValue(state_atom)
+    const comparator = config?.comparator ?? Object.is
 
     return [
         useSignalOutput(state, comparator),
