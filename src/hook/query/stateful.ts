@@ -53,12 +53,16 @@ export const useQueryStateful = function <Data>(
     r.useLayoutEffect((): VoidFunction | void => {
         if (!nprop_status_disabled && query_status === asc.Query_Status.Idle) {
             query.load()
+        }
+    }, [query, nprop_status_disabled, query_status])
 
+    r.useLayoutEffect((): VoidFunction | void => {
+        if (!nprop_status_disabled) {
             return () => {
                 query.clear()
             }
         }
-    }, [query, nprop_status_disabled, query_status])
+    }, [query, nprop_status_disabled])
 
     return [
         query,
